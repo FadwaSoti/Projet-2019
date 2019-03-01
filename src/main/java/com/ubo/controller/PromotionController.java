@@ -27,13 +27,13 @@ public class PromotionController {
 
 	// Recuperer toutes les promotions:
 	@RequestMapping("/promotions")
-	public List<Promotion> recupererToutesLesPromotions() {
+	public List<Promotion> promotionAll() {
 		return promotionservice.recupererToutesLesPromotions();
 	}
 
 	// Recuperer les promotions a partir de l'id:
 	@RequestMapping("promotions/{formation}/{anneeUniversitaire}")
-	public Optional<Promotion> recupererPromotionParId(@PathVariable String formation,
+	public Optional<Promotion> promotionParId(@PathVariable String formation,
 			@PathVariable String anneeUniversitaire) {
 		return promotionservice.recupererPromotionParId(formation, anneeUniversitaire);
 	}
@@ -46,7 +46,7 @@ public class PromotionController {
 
 	// Recuperer une promotion a  partir du siglePromotion:
 	@RequestMapping("promotions/siglePromotion/{siglePromotion}")
-	public Promotion recupererPromotionParSigle(@PathVariable String siglePromotion) {
+	public Promotion promotionParSigle(@PathVariable String siglePromotion) {
 		return promotionservice.recupererPromotionParSigle(siglePromotion);
 	}
 
@@ -64,7 +64,7 @@ public class PromotionController {
 
 	// Recuperer une promotion par lieu de rentree:
 	@RequestMapping("promotions/lieuRentree/{lieuRentree}")
-	public List<Promotion> recupererPromotionParLieuRentree(@PathVariable String lieuRentree) {
+	public List<Promotion> promotionParLieuRentree(@PathVariable String lieuRentree) {
 		return promotionservice.recupererPromotionParLieuRentree(lieuRentree);
 	}
 
